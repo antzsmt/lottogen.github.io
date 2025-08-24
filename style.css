@@ -1,0 +1,249 @@
+:root {
+  --bg-gradient-light: linear-gradient(to right, #f0f4ff, #dbe9ff);
+  --bg-gradient-dark: linear-gradient(to right, #1a1a1a, #2c2c2c);
+  --text-color-light: #333;
+  --text-color-dark: #f0f0f0;
+  --font-family: 'Segoe UI', sans-serif;
+}
+
+[data-theme="light"] {
+  --bg-gradient: var(--bg-gradient-light);
+  --text-color: var(--text-color-light);
+}
+
+[data-theme="dark"] {
+  --bg-gradient: var(--bg-gradient-dark);
+  --text-color: var(--text-color-dark);
+}
+
+body {
+  font-family: var(--font-family);
+  background: var(--bg-gradient);
+  padding: 30px;
+  color: var(--text-color);
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+button {
+  background: #0078d7;
+  color: white;
+  border: 1px solid #005fa3; /* subtle border */
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* soft shadow */
+  touch-action: manipulation; /* faster tap response */
+}
+
+#controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+#controls button {
+  min-width: 200px;
+  text-align: center;
+}
+
+
+
+button:hover {
+  background: #005fa3;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+  transform: scale(0.98);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+#themeToggle:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+#themeToggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  padding: 10px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#themeIcon {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+#themeToggle:active #themeIcon {
+  transform: rotate(180deg);
+}
+
+[data-theme="dark"] #themeIcon {
+  color: #00bcd4;
+}
+[data-theme="light"] #themeIcon {
+  color: #0078d7;
+}
+
+
+.favorite {
+  color: gold;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+#results {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+#results.fade-out {
+  opacity: 0;
+}
+
+#spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.loader {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #0078d7;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.roll {
+  display: inline-block;
+  animation: rollIn 0.6s ease-out;
+}
+
+@keyframes rollIn {
+  0% { transform: translateY(-20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+
+.line {
+  background: #fff;
+  padding: 10px;
+  margin: 5px 0;
+  border-left: 5px solid #0078d7;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+[data-theme="dark"] .line {
+  background: #2a2a2a;
+  border-left-color: #00bcd4;
+}
+
+
+.line.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.line span {
+  flex-grow: 1;
+}
+
+
+#splash {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #0078d7;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  z-index: 100;
+  animation: fadeSplash 2s forwards;
+}
+
+@keyframes fadeSplash {
+  0% { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; }
+}
+
+.spinner-fade {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  #controls {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #controls button {
+    width: 100%;
+    max-width: 300px;
+    font-size: 15px;
+  }
+
+  .line {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 1em;
+  }
+
+  .roll {
+    margin: 2px;
+    padding: 4px 6px;
+    font-size: 14px;
+  }
+
+  #splash {
+    font-size: 1.5em;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .loader {
+    width: 30px;
+    height: 30px;
+    border-width: 4px;
+  }
+}
+

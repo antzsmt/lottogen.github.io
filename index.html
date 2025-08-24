@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LottoGen 🎲</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="splash">
+    <h1>🎲 Welcome to LottoGen</h1>
+  </div>
+
+  <main>
+    <h1>🎰 Lotto Number Generator</h1>
+
+<section id="controls">
+  <button id="themeToggle" aria-label="Toggle Theme">
+  <span id="themeIcon">🌞</span>
+</button>
+
+  <button onclick="generateLines()">🎰 Generate 50 Lines</button>
+  <button onclick="regenerateLines()">🔄 Regenerate Lines</button>
+  <button onclick="toggleBias()">🎯 Toggle Bias: <span id="biasLabel">Hot/Cold</span></button>
+  <button onclick="exportCSV()">📤 Export to CSV</button>
+</section>
+
+    <section id="results"></section>
+
+    <div id="spinner">
+      <div class="loader"></div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
