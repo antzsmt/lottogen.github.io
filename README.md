@@ -1,22 +1,33 @@
-# 🎲 LottoGen
+# 🎰 LottoGen
 
-A sleek, mobile-friendly Lotto number generator built for local hosting. Generates 50 statistically optimized lines with hot/cold bias, odd/even balance, sum range filtering, and CSV export. Designed for rapid prototyping and playful experimentation.
+A modular, mobile-friendly Lotto Number Generator with bias toggling, CSV export, and animated UI.
+
+[![GitHub Repo](https://img.shields.io/badge/Repo-antzsmt%2Flottogen-blue?logo=github)](https://github.com/antzsmt/lottogen)
+[![GitHub Stars](https://img.shields.io/github/stars/antzsmt/lottogen?style=social)](https://github.com/antzsmt/lottogen/stargazers)
+[![Last Commit](https://img.shields.io/github/last-commit/antzsmt/lottogen)](https://github.com/antzsmt/lottogen/commits/main)
+[![Demo Page](https://img.shields.io/badge/Demo-Live-green?logo=githubpages)](https://antzsmt.github.io/lottogen/)
 
 ---
 
-## 🚀 Features
+## 🔧 Features
 
-- 🎰 **Generate 50 Lines** — Instantly create 50 6-number lines with smart constraints
-- 🔄 **Regenerate** — Refresh the set with animated transitions
-- 🎯 **Toggle Bias** — Switch between hot/cold bias or full randomness
-- 📤 **Export to CSV** — Save all generated lines for analysis or printing
-- 📱 **Mobile Friendly** — Responsive layout with touch-optimized buttons
-- 🎞️ **Animated UI** — Slot-style number roll, splash screen, and fade effects
+- 🎱 Generate 50 lines of lotto numbers
+- 🔁 Regenerate with a single click
+- 🔥 Toggle bias: Hot / Cold numbers
+- 📄 Export results to CSV
+- 📱 Mobile-friendly interface
+
+---
+
+## 🚀 [Live Demo](https://antzsmt.github.io/lottogen/)
+
+Explore the full functionality on the [LottoGen demo page](https://antzsmt.github.io/lottogen/).
 
 ---
 
 ## 📦 Installation
 
-1. Clone the repo:
-   ```bash
-   git clone https://github.com/your-username/LottoGen.git
+```bash
+git clone https://github.com/antzsmt/lottogen.git
+cd lottogen
+open index.html
