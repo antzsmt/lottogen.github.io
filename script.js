@@ -88,7 +88,7 @@ function regenerateLines() {
 function exportCSV() {
   if (allLines.length === 0) return alert("No lines to export!");
 
-  let csv = "Line Numbers\n";
+  let csv = "";
   allLines.forEach(line => {
     csv += line.join(", ") + "\n";
   });
@@ -131,3 +131,4 @@ window.onload = () => {
     spinner.style.display = "none";
   }, 500); // Wait for fade to finish
 };
+
